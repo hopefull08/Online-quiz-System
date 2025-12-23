@@ -71,6 +71,15 @@ h1 {
 
 
 
+.question {
+    margin-bottom: 20px;
+}
+
+label {
+    cursor: pointer;
+    font-size: 16px;
+}
+
 .overlay {
     position: fixed;
     top: 0; left: 0;
@@ -87,3 +96,4 @@ h1 {
     border-radius: 8px;
     text-align: center;
 }
+
