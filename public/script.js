@@ -30,6 +30,16 @@ function showQuestion() {
             input.value = opt;
 
             input.onclick = () => {
+            // Disable all radios for this question once one is chosen
+                const allRadios = document.getElementsByName("answer");
+                allRadios.forEach(r => {
+                    r.disabled = true;
+                    // also grey out the label text for each disabled radio
+                    if (r !== input) {
+                        r.parentElement.style.color = "grey";
+                    }
+                    });
+
                 if (input.value === q.correct_answer) {
                     label.style.color = "green";
                     score++;
@@ -38,6 +48,7 @@ function showQuestion() {
                 }
                 document.getElementById("continueBtn").style.display = "inline-block";
             };
+
 
             label.prepend(input);
             questionDiv.appendChild(label);
