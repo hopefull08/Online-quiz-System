@@ -30,12 +30,17 @@ if (isset($_GET['delete_id'])) {
     header("Location: quiz.php?quiz_id=" . $quizId);
     exit;
 }
+$result = $conn->query("
+    SELECT q.id, q.title, q.description, c.name AS course_name
+    FROM quizzes q
+    JOIN courses c ON q.course_id = c.id
+");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Quiz Details</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./public/style.css">
     <style>
         .quiz-container { margin:20px; }
         .question-block { border:1px solid #ccc; padding:10px; margin-bottom:10px; }
@@ -47,6 +52,7 @@ if (isset($_GET['delete_id'])) {
     <div class="quiz-container">
         <h1><?php echo htmlspecialchars($quiz['title']); ?></h1>
         <p><?php echo nl2br(htmlspecialchars($quiz['description'])); ?></p>
+         <a href="quizEdit.php?quiz_id=<?php echo $quiz['id']; ?>" class="btn">Edit Quiz</a>
 
         <h3>Questions</h3>
         <?php if (empty($questions)): ?>
