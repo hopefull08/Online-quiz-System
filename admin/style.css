@@ -14,4 +14,13 @@ body {
   padding: 20px;            /* instead of fixed height */
   box-shadow: 0px 0px 2px 4px grey;
 }
+form input,
+form button,
+form label {
+  margin-bottom: 1rem; /* adds space below each element */
+}
+form{
+    text-align: center;
+}
+
 
