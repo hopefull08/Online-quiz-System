@@ -1,5 +1,6 @@
 <?php
 include '../includes/db.php';
+include '../public/header.php';
 
 if (!isset($_GET['quiz_id'])) {
     die("No quiz selected.");

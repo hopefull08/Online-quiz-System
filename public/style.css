@@ -1,7 +1,27 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+  background-color: #ffffff;
+  color: #000000;
 }
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .quiz-item,
+body.dark-mode .question-block {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark-mode .btn {
+  background-color: #444;
+  color: #fff;
+}
+
 
 h1 {
     margin-bottom: 20px;

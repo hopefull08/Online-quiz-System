@@ -1,5 +1,6 @@
 <?php
 include '../includes/db.php'; // connect to database
+include '../public/header.php';
 
 // Fetch all courses
 $result = $conn->query("SELECT * FROM courses");
