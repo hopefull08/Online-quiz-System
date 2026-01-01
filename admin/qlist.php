@@ -30,18 +30,8 @@ $result = $conn->query("
 <head>
     <title>Admin - Quiz List</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .quiz-list { margin:20px; }
-        .quiz-item { border:1px solid #ccc; padding:10px; margin-bottom:10px; display:flex; justify-content:space-between; }
-        .btn { padding:6px 12px; background:#007bff; color:white; border:none; cursor:pointer; }
-        .btn:hover { background:#0056b3; }
-        /* Popup modal */
-        .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; }
-        .modal-content { background:white; padding:20px; border-radius:8px; width:400px; }
-        .close { float:right; cursor:pointer; font-size:20px; }
-    </style>
 </head>
-<body>
+<body class="quizlist">
     <h1>Quiz Management</h1>
 
     <button class="btn" onclick="openModal()">Create Quiz</button>

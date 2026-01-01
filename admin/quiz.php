@@ -42,12 +42,6 @@ $result = $conn->query("
 <head>
     <title>Quiz Details</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .quiz-container { margin:20px; }
-        .question-block { border:1px solid #ccc; padding:10px; margin-bottom:10px; }
-        .btn { padding:6px 12px; background:#dc3545; color:white; border:none; cursor:pointer; }
-        .btn:hover { background:#a71d2a; }
-    </style>
 </head>
 <body>
     <div class="quiz-container">

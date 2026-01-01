@@ -33,12 +33,6 @@ if ($quizId) {
 <head>
     <title><?php echo $quizId ? "Edit Quiz" : "Create Quiz"; ?></title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .form-container { margin:20px; }
-        .question-block { border:1px solid #ccc; padding:10px; margin-bottom:10px; }
-        .btn { padding:6px 12px; background:#007bff; color:white; border:none; cursor:pointer; margin-right:10px; }
-        .btn:hover { background:#0056b3; }
-    </style>
 </head>
 <body>
     <h1><?php echo $quizId ? "Edit Quiz" : "Create Quiz"; ?></h1>
