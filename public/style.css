@@ -21,6 +21,16 @@ body.dark-mode .btn {
   background-color: #444;
   color: #fff;
 }
+body.dark-mode .btnt {
+   color:rgb(255, 234, 0);
+}
+.btnt {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem; /* size of icon */
+  color: inherit;    /* adapts to text color */
+}
 
 
 h1 {
