@@ -35,6 +35,7 @@ if ($quizId) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="quiz">
+    <a href="qcourse.php" class="btn">⬅ Back</a>
     <div class="H">
     <h1><?php echo $quizId ? "Edit Quiz" : "Create Quiz"; ?></h1>
 

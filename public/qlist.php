@@ -28,6 +28,7 @@ $quiz_result = $conn->query("
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a href="qcourse.php" class="btn">⬅ Back</a>
     <h1><?php echo $course['name']; ?> - Quizzes</h1>
 
     <div class="quiz-list">
