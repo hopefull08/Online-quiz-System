@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location: qlist.php");
             exit;
         } else {
-            $error = "Invalid password.";
+            $error = "Invalid Username or password.";
         }
     } else {
         $error = "User not found.";
