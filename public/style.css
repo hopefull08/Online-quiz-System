@@ -7,7 +7,7 @@ body {
 
 /* Dark mode */
 body.dark-mode {
-  background-color: #121212;
+    background-color: #272727;
   color: #f1f1f1;
 }
 
@@ -17,103 +17,171 @@ body.dark-mode .question-block {
   border-color: #333;
 }
 
-body.dark-mode .btn {
-  background-color: #444;
-  color: #fff;
+body.dark-mode h1,
+body.dark-mode .quiz-count{
+  color: rgb(185, 184, 184);
+}
+body.dark-mode .btnt {
+   color:rgb(255, 234, 0);
+}
+body.dark-mode .course-item {
+   box-shadow:0 0.2rem 0.5rem 0rem #a6a5a5; 
+}
+body.dark-mode .result h2,
+body.dark-mode .result p{
+    color:#000000;
+}
+
+.btnt {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem; /* size of icon */
+  color: inherit;    /* adapts to text color */
 }
 
 
 h1 {
-    margin-bottom: 20px;
-    color:red;
+    margin-bottom: 3rem;
+    color:rgba(72, 72, 72, 1);
+    text-align: center;
 }
 
-.course-list {
+.list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 3rem;
+    align-items: center;
 }
 
-.course-item {
+.item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #ccc;
-    padding: 10px;
+    box-shadow:0 0.2rem 0.5rem 0rem #848383; 
     border-radius: 6px;
+    width:87vw;
+    min-height:25vh;
 }
-
-.course-name {
+.nam{
+  margin-left:3rem;
+}
+.item a{
+    margin-right:3rem;
+}
+.name {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 2.5rem;
+}
+.quiz-count {
+    font-size: 1em;   /* smaller font */
+    color: #555;        /* subtle grey */
+    display: block;     /* ensures it appears below course name */
+    margin-top: 0.8rem;
 }
 
-.start-btn {
-    background-color: #007BFF;
-    color: white;
-    padding: 8px 15px;
+.button {
+    background-color: #F3DDCF;
+    color: #4D4343;
+    padding: 1rem 2rem;
     text-decoration: none;
-    border-radius: 4px;
+    font-size: 2rem;
+    border-radius: 1rem;
     transition: background 0.3s;
 }
 
-.start-btn:hover {
-    background-color: #0056b3;
+.button:hover {
+    background-color: #ebf5b0;
 }
 
-
-
-.quiz-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #456d98;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-left: 1rem;
 }
-
-.quiz-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    border: 1px solid #ccc;
-    padding: 15px;
-    border-radius: 6px;
-}
-
-.quiz-info h2 {
-    margin: 0;
-    font-size: 20px;
-}
-
-.quiz-info p {
-    margin: 5px 0;
-    color: #555;
+.btn:hover {
+  background-color: #0056b3;
 }
 
 
 
 
-.question {
-    margin-bottom: 20px;
+.question{
+    width:87vw;
 }
-
-label {
-    cursor: pointer;
-    font-size: 16px;
+.question p { 
+    margin-bottom: 1.5rem; /* adds space below the question */ 
+    margin-left:1rem;
+    font-size: 1.5rem;
+} /* Space between each choice */ 
+.question label {
+    display: block; /* already in your script */ 
+    font-size: 1.3rem;
+    margin-left:3rem;
+    margin-bottom: 1rem; /* adds space between options */ 
 }
-
+#continueBtn{
+    display:none;
+    border:none;
+    background-color: #F3DDCF;
+    color: #4D4343;
+    padding: 0.2rem;
+    font-size: 1.5rem;
+    border-radius: 0.8rem;
+    transition: background 0.3s;
+    margin-top: 2rem;
+    margin-left:3rem;
+    box-shadow: 0 0 0.5rem 0.2rem rgb(187, 187, 187);
+}
+#continueBtn:hover {
+    background-color: #ebf5b0;
+}
 .overlay {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
+    background: rgba(64, 56, 56,0.9);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-content: center;
 }
 
 .overlay-content {
+    margin:auto;
+    width:45vw;
+    height:45vh;
     background: white;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
+    box-shadow: 0 0 0.5rem 0.2rem #9EB589;
 }
+.result{
+    margin-top:3rem;
+}
+#scoreText{
+    font-size: 1.5rem;
+}
+.overbtn{
+    border:none;
+    background-color: #F3DDCF;
+    color: #4D4343;
+    padding: 0.7rem;
+    font-size: 1.7rem;
+    border-radius: 0.8rem;
+    transition: background 0.3s;
+    margin-top: 2rem;
+    box-shadow: 0 0 0.5rem 0.2rem rgb(187, 187, 187);
+}
+
+
+.H{
+  padding:2rem;
+  margin-left:4rem;
+}
+
 

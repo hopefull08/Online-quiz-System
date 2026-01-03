@@ -44,6 +44,7 @@ $result = $conn->query("
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="quiz">
+    <a href="qcourse.php" class="btn">⬅ Back</a>
     <div class="H">
     <div class="quiz-container">
         <h1><?php echo htmlspecialchars($quiz['title']); ?></h1>

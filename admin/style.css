@@ -18,6 +18,16 @@ body.dark-mode .question-block {
   background-color: #1e1e1e;
   border-color: #333;
 }
+body.dark-mode .btnt {
+   color:rgb(255, 234, 0);
+}
+.btnt {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem; /* size of icon */
+  color: inherit;    /* adapts to text color */
+}
 
 body.login-page {
     overflow-y: hidden; 
@@ -46,10 +56,6 @@ form label {
 }
 .upper form{
     text-align: center;
-}
-.btnt{
-  margin-top:2rem;
-  margin-left: 2rem;
 }
 
 

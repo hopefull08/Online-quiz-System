@@ -1,10 +1,12 @@
 let currentIndex = 0;
 let score = 0;
+let hasAnswered = false;
 
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", () => {
     showQuestion();
     document.getElementById("continueBtn").addEventListener("click", nextQuestion);
-};
+});
+
 
 function showQuestion() {
     let container = document.getElementById("quiz-container");
@@ -14,9 +16,11 @@ function showQuestion() {
     let questionDiv = document.createElement("div");
     questionDiv.className = "question";
 
-    let p = document.createElement("p");
-    p.textContent = q.question_text;
-    questionDiv.appendChild(p);
+let p = document.createElement("p");
+// Add 1 because currentIndex starts at 0
+p.textContent = `${currentIndex + 1}. ${q.question_text}`;
+questionDiv.appendChild(p);
+
 
     ["A","B","C"].forEach(opt => {
         if (q["option_" + opt.toLowerCase()]) {
@@ -30,6 +34,7 @@ function showQuestion() {
             input.value = opt;
 
             input.onclick = () => {
+                hasAnswered = true;
             // Disable all radios for this question once one is chosen
                 const allRadios = document.getElementsByName("answer");
                 allRadios.forEach(r => {
@@ -67,14 +72,25 @@ function nextQuestion() {
     } else {
         // Finished
         let scoreText = document.getElementById("scoreText");
-        scoreText.textContent = `You answered ${score} out of ${questions.length} correctly.`;
+        scoreText.textContent = `You answered ${score} / ${questions.length} correctly.`;
         document.getElementById("resultOverlay").style.display = "block";
     }
 }
 
 function closeOverlay() {
+  hasAnswered = false;
   window.location.replace("qlist.php?course_id=" + courseId);
 }
+
+window.addEventListener("beforeunload", (event) => {
+    if (hasAnswered) {
+        event.preventDefault();
+        // Chrome requires returnValue to be set
+        event.returnValue = "Your answers will be reset and you will start again. Are you sure?";
+    }
+});
+
+
 
 
 
