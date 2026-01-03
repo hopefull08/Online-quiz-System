@@ -14,7 +14,7 @@ $result = $conn->query("SELECT * FROM courses");
 <body>
     <h1>This is the quiz list - Choose the course you want to take</h1>
 
-    <div class="course-list">
+    <div class="list">
         <?php if ($result->num_rows > 0): ?>
             <?php while($row = $result->fetch_assoc()): ?>
                 <?php
@@ -23,12 +23,12 @@ $result = $conn->query("SELECT * FROM courses");
                     $quiz_count_result = $conn->query("SELECT COUNT(*) AS total FROM quizzes WHERE course_id = $course_id");
                     $quiz_count = $quiz_count_result->fetch_assoc()['total'];
                 ?>
-                <div class="course-item">
+                <div class="item">
                     <div class="nam">
-                    <span class="course-name"><?php echo $row['name']; ?></span>
+                    <span class="name"><?php echo $row['name']; ?></span>
                     <span class="quiz-count">Number of quizzes: <?php echo $quiz_count; ?></span>
                     </div>
-                    <a href="qlist.php?course_id=<?php echo $row['id']; ?>" class="start-btn">Start</a>
+                    <a href="qlist.php?course_id=<?php echo $row['id']; ?>" class="button">Start</a>
                 </div>
             <?php endwhile; ?>
         <?php else: ?>

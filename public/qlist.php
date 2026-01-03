@@ -31,18 +31,18 @@ $quiz_result = $conn->query("
     <a href="qcourse.php" class="btn">⬅ Back</a>
     <h1><?php echo $course['name']; ?> - Quizzes</h1>
 
-    <div class="quiz-list">
+    <div class="list">
         <?php if ($quiz_result->num_rows > 0): ?>
             <?php while($row = $quiz_result->fetch_assoc()): ?>
-                <div class="quiz-item">
-                    <div class="quiz-info">
+                <div class="item">
+                    <div class="nam">
                         <h2><?php echo $row['title']; ?></h2>
                         <?php if (!empty($row['description'])): ?>
                             <p><?php echo $row['description']; ?></p>
                         <?php endif; ?>
                         <p><strong>Questions:</strong> <?php echo $row['question_count']; ?></p>
                     </div>
-                    <a href="quiz.php?quiz_id=<?php echo $row['id']; ?>" class="start-btn">Start</a>
+                    <a href="quiz.php?quiz_id=<?php echo $row['id']; ?>" class="button">Start</a>
                 </div>
             <?php endwhile; ?>
         <?php else: ?>

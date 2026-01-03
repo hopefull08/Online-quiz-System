@@ -40,7 +40,7 @@ while($q = $question_result->fetch_assoc()) {
     <h1><?php echo $quiz['title']; ?></h1>
 
     <div id="quiz-container"></div>
-    <button id="continueBtn" style="display:none;">Continue</button>
+    <button id="continueBtn">Continue</button>
 
     <!-- Overlay for final score -->
     <div id="resultOverlay" class="overlay" style="display:none;">
