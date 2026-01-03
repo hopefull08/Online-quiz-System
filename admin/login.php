@@ -28,17 +28,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Admin Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="login-page">
+<body>
     <div class="upper">
-    <div class="login-container">
-    <h1>Admin Login</h1>
-    <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
-    <form method="post">
-        <label>Username: <input type="text" name="username"></label><br>
-        <label>Password: <input type="password" name="password"></label><br>
-        <button type="submit">Login</button>
-    </form>
-    </div>
+        <div class="login-container">
+            <h1>Admin Login</h1>
+            <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
+            <form method="post">
+                <label>Username: <input type="text" name="username"></label><br>
+                <label>Password: <input type="password" name="password"></label><br>
+                <button type="submit">Login</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
