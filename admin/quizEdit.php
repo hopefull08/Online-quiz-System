@@ -1,7 +1,7 @@
 <?php
 include '../includes/session.php';
 include '../includes/db.php';
-include '../public/header.php';
+include '../includes/header.php';
 
 $quizId = $_GET['quiz_id'] ?? null;
 $title = $_GET['title'] ?? null;
@@ -34,8 +34,8 @@ if ($quizId) {
     <title><?php echo $quizId ? "Edit Quiz" : "Create Quiz"; ?></title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="quiz">
-    <a href="qcourse.php" class="btn">⬅ Back</a>
+<body>
+    <a href="quiz.php?quiz_id=<?php echo $quiz['id']; ?>" class="btn">⬅ Back</a>
     <div class="H">
     <h1><?php echo $quizId ? "Edit Quiz" : "Create Quiz"; ?></h1>
 

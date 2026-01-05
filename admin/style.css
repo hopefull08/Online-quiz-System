@@ -1,8 +1,6 @@
 
-html,body { 
-    
-    margin: 0; /* remove default body margin */ 
-    padding: 0;
+body { 
+  margin: 2rem;  
   background-color: #ffffff;
   color: #000000;
 }
@@ -28,17 +26,13 @@ body.dark-mode .btnt {
   font-size: 1.5rem; /* size of icon */
   color: inherit;    /* adapts to text color */
 }
-
-body.login-page {
-    overflow-y: hidden; 
-}
 .upper{
-    min-height: 100vh;
-    width:100%;
-    display: flex; 
-    justify-content: center; /* horizontal */ 
-    align-items: center; /* vertical */ 
-    overflow: hidden;
+  position: fixed;
+  top: 0; left: 0;
+  width:100%;
+  height:100%;
+  display:flex;
+  background-color: #988181;
 }
 .login-container {
   display: flex;
@@ -48,6 +42,8 @@ body.login-page {
   width: 30%;
   padding: 20px;            /* instead of fixed height */
   box-shadow: 0px 0px 2px 4px grey;
+  margin:auto;
+  background-color: #ccc;
 }
 form input,
 form button,
@@ -61,14 +57,6 @@ form label {
 
 
 /*quiz list*/
-
-body.quiz{
-  padding: 0;
-  overflow-y: auto; 
-  /* scroll only if needed */ 
-  min-height: 100vh;
-  margin:0;
-}
 .H{
   padding:2rem;
 }
@@ -101,8 +89,9 @@ body.quiz{
   background-color:#82383f;
 }
 .btn:hover { 
-  background:#0056b3; 
+  background:#8da882; 
 }
+
 /* Popup modal */
 .modal { 
   display:none; 
@@ -131,7 +120,6 @@ body.quiz{
 
 
 /*quiz.php*/
-
 .quiz-container { 
   margin:20px; 
 }
@@ -139,8 +127,11 @@ body.quiz{
   border:1px solid #ccc; 
   padding:10px; 
   margin-bottom:10px; 
+  margin-left: 2rem;
 }
-
+.side{
+  margin-left:2rem;
+}
 
 
 
@@ -148,9 +139,6 @@ body.quiz{
 .form-container { 
   margin:20px; 
 }
-.question-block { 
-  border:1px solid #ccc; 
-  padding:10px; 
-  margin-bottom:10px; 
+.form-container input{
+  width:17vw;
 }
-

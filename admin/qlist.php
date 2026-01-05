@@ -1,7 +1,7 @@
 <?php
 include '../includes/session.php';
 include '../includes/db.php';
-include '../public/header.php';
+include '../includes/header.php';
 
 // Handle quiz deletion 
 if (isset($_GET['delete_id'])) {
@@ -31,7 +31,7 @@ $result = $conn->query("
     <title>Admin - Quiz List</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="quiz">
+<body>
     <div class="H">
     <h1>Quiz Management</h1>
 

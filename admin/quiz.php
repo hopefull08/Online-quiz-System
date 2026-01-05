@@ -1,7 +1,7 @@
 <?php
 include '../includes/session.php';
 include '../includes/db.php';
-include '../public/header.php';
+include '../includes/header.php';
 
 $quizId = $_GET['quiz_id'] ?? null;
 
@@ -43,8 +43,9 @@ $result = $conn->query("
     <title>Quiz Details</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="quiz">
-    <a href="qcourse.php" class="btn">⬅ Back</a>
+<body>
+    
+    <a href="qlist.php" class="btn">⬅ Back</a>
     <div class="H">
     <div class="quiz-container">
         <h1><?php echo htmlspecialchars($quiz['title']); ?></h1>
@@ -55,22 +56,25 @@ $result = $conn->query("
         <?php if (empty($questions)): ?>
             <p>No questions found for this quiz.</p>
         <?php else: ?>
-            <?php foreach ($questions as $q): ?>
-                <div class="question-block">
-                    <p><strong>Question:</strong> <?php echo htmlspecialchars($q['question_text']); ?></p>
-                    <p><strong>Option A:</strong> <?php echo htmlspecialchars($q['option_a']); ?></p>
-                    <p><strong>Option B:</strong> <?php echo htmlspecialchars($q['option_b']); ?></p>
-                    <p><strong>Option C:</strong> <?php echo htmlspecialchars($q['option_c']); ?></p>
-                    <p><strong>Correct Answer:</strong> <?php echo htmlspecialchars($q['correct_answer']); ?></p>
+            <?php foreach ($questions as $index => $q): ?>
+    <div class="question-block">
+        <p><strong><?php echo $index + 1; ?>.</strong> 
+           <?php echo htmlspecialchars($q['question_text']); ?></p>
+           <div class="side">
+        <p><strong>A:</strong> <?php echo htmlspecialchars($q['option_a']); ?></p>
+        <p><strong>B:</strong> <?php echo htmlspecialchars($q['option_b']); ?></p>
+        <p><strong>C:</strong> <?php echo htmlspecialchars($q['option_c']); ?></p>
+        <p><strong>Correct Answer:</strong> <?php echo htmlspecialchars($q['correct_answer']); ?></p>
+           </div>
+        <!-- Delete button -->
+        <a class="btn D" 
+           href="quiz.php?quiz_id=<?php echo $quizId; ?>&delete_id=<?php echo $q['id']; ?>" 
+           onclick="return confirm('Are you sure you want to delete this question?');">
+           Delete
+        </a>
+    </div>
+<?php endforeach; ?>
 
-                    <!-- Delete button -->
-                    <a class="btn D" 
-                       href="quiz.php?quiz_id=<?php echo $quizId; ?>&delete_id=<?php echo $q['id']; ?>" 
-                       onclick="return confirm('Are you sure you want to delete this question?');">
-                       Delete
-                    </a>
-                </div>
-            <?php endforeach; ?>
         <?php endif; ?>
     </div>
     </div>
