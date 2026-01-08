@@ -1,4 +1,8 @@
 <?php
+if (preg_match('/Mobile|Android|iPhone|iPad/i', $_SERVER['HTTP_USER_AGENT'])) { 
+    include '../includes/block.php'; // adjust path as needed 
+    exit;
+}
 include '../includes/db.php'; // connect to database
 include '../includes/header.php';
 
